@@ -6,11 +6,7 @@ export default function Footer() {
             <div className={`container ${styles.inner}`}>
                 <div className={styles.brand}>
                     <span className={styles.dot} />
-                    <p className={styles.copy}>© 2026 HypeR.DEV PORTFOLIO</p>
-                </div>
-                <div className={styles.links}>
-                    <a href="#" className={styles.link}>STYLEGUIDE</a>
-                    <a href="#" className={styles.link}>LICENSING</a>
+                    <p className={styles.copy}>© {new Date().getFullYear()} ItzHyper.DEV PORTFOLIO</p>
                 </div>
             </div>
         </footer>
