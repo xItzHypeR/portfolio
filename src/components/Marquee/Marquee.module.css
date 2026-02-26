@@ -1,0 +1,39 @@
+.wrapper {
+    width: 110%;
+    margin-left: -5%;
+    background-color: var(--color-primary);
+    border-top: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+    overflow: hidden;
+    padding: 1.25rem 0;
+    transform: rotate(-1.5deg);
+    position: relative;
+    z-index: 20;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.scroll {
+    white-space: nowrap;
+    display: flex;
+}
+
+.track {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+}
+
+.item {
+    display: inline-flex;
+    align-items: center;
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.item .material-icons {
+    font-size: 1.75rem;
+    margin: 0 1rem;
+}

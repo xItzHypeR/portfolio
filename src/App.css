@@ -1,0 +1,11 @@
+/* Minimal App-level resets — all design handled in index.css + CSS Modules */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
