@@ -1,0 +1,49 @@
+.wrapper {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 40;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        display: block;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-align: center;
+    border: 4px solid #ffffff;
+    border-radius: 9999px;
+    box-shadow: var(--shadow-neo);
+    animation: bounce 2s infinite;
+    transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.fab:hover {
+    box-shadow: none;
+    transform: translate(4px, 4px);
+    animation: none;
+}
