@@ -49,8 +49,10 @@ export default function Hero() {
                             className={styles.photo}
                         />
                         <div className={`${styles.corner} ${styles.cornerTL}`} />
+                        <div className={`${styles.corner} ${styles.cornerTR}`} />
+
                         <div className={`${styles.corner} ${styles.cornerBR}`} />
-                        <div className={styles.devTag}>&lt;DEV_MODE /&gt;</div>
+                        <div className={styles.devTag}>&lt;GUSTAVO PERALTA /&gt;</div>
                     </div>
                 </div>
             </div>
