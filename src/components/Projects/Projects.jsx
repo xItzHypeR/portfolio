@@ -19,7 +19,7 @@ function ProjectCard({ project }) {
                         <h3 className={styles.cardTitle}>{project.title}</h3>
                         <div className={styles.techContainer}>
                             {project.techList.map((tech, index) => (
-                                <span key={index} className={styles.cardTech}>
+                                <span key={`${tech}-${index}`} className={styles.cardTech}>
                                     {tech}
                                 </span>
                             ))}

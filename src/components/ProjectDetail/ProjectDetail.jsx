@@ -40,7 +40,7 @@ export default function ProjectDetail() {
                         <div className={styles.tagline}>{project.tagline}</div>
                         <h1 className={styles.title}>
                             {project.title.split(' ').map((word, i) => (
-                                <span key={i}>{word}<br /></span>
+                                <span key={`${word}-${i}`}>{word}<br /></span>
                             ))}
                         </h1>
                     </div>
@@ -68,7 +68,7 @@ export default function ProjectDetail() {
                 <div className={styles.marquee}>
                     <div className={styles.marqueeInner}>
                         {[...Array(6)].map((_, i) => (
-                            <span key={i}>
+                            <span key={`tech-${i}`}>
                                 {project.techList.join(' • ')} •
                             </span>
                         ))}

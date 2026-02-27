@@ -6,7 +6,7 @@ function Track() {
     return (
         <span className={styles.track}>
             {techs.map((t, i) => (
-                <span key={i} className={styles.item}>
+                <span key={`${t}-${i}`} className={styles.item}>
                     {t}
                     <span className={`material-icons ${styles.icon}`}>bolt</span>
 
