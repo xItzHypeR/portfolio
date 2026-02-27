@@ -2,7 +2,7 @@ import styles from './Hero.module.css';
 
 export default function Hero() {
     return (
-        <section className={styles.hero}>
+        <section id="hero" className={styles.hero}>
             <div className={`container ${styles.inner}`}>
                 {/* Left column */}
                 <div className={styles.left}>
