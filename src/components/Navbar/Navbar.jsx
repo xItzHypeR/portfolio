@@ -7,7 +7,6 @@ export default function Navbar() {
         <a href="#" className={styles.logo}>ITZHYPER.PORTFOLIO</a>
 
         <nav className={styles.links}>
-          <a href="#work" className={styles.navLink}>WORK</a>
           <a href="#about" className={styles.navLink}>ABOUT</a>
           <a href="#contact" className={styles.ctaBtn}>GET IN TOUCH</a>
         </nav>
