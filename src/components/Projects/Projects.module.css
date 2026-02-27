@@ -106,12 +106,17 @@
     font-weight: 700;
     margin-bottom: 0.25rem;
 }
-
 .cardTech {
     font-family: monospace;
-    font-size: 0.85rem;
-    color: var(--neon-violet);
+    font-size: 0.8rem;
+    color: #ffffff; 
+    display: inline-block;
+    padding: 0.35rem 0.75rem; 
+    background-color: var(--color-bg-dark); 
+    border: 1px solid var(--neon-violet);
+    box-shadow: 3px 3px 0px 0px var(--color-primary);
 }
+
 
 .badge {
     border: 2px solid var(--color-primary);
@@ -121,6 +126,13 @@
     font-weight: 700;
     text-transform: uppercase;
     flex-shrink: 0;
+}
+
+.techContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .cardDesc {

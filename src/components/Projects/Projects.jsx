@@ -17,9 +17,14 @@ function ProjectCard({ project }) {
                 <div className={styles.cardHeader}>
                     <div>
                         <h3 className={styles.cardTitle}>{project.title}</h3>
-                        <p className={styles.cardTech}>{project.tech}</p>
+                        <div className={styles.techContainer}>
+                            {project.techList.map((tech, index) => (
+                                <span key={index} className={styles.cardTech}>
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
                     </div>
-                    <span className={styles.badge}>{project.badge}</span>
                 </div>
                 <p className={styles.cardDesc}>{project.desc}</p>
                 <Link to={`/project/${project.id}`} className={styles.caseStudyBtn}>
