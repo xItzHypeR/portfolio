@@ -208,6 +208,8 @@
 
 .textarea {
     min-height: 150px;
+    resize: none;
+    scrollbar-width: none;
 }
 
 
