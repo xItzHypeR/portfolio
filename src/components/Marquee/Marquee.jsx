@@ -1,6 +1,6 @@
 import styles from './Marquee.module.css';
 
-const techs = ['React', 'Javascript', 'Node.js', 'Java', 'C#', 'MySQL'];
+const techs = ['React', 'JS', 'Node.js', 'Java', 'C#', 'MySQL'];
 
 function Track() {
     return (
@@ -8,7 +8,8 @@ function Track() {
             {techs.map((t, i) => (
                 <span key={i} className={styles.item}>
                     {t}
-                    <span className="material-icons">bolt</span>
+                    <span className={`material-icons ${styles.icon}`}>bolt</span>
+
                 </span>
             ))}
         </span>

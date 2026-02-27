@@ -33,7 +33,7 @@
     text-transform: uppercase;
 }
 
-.item .material-icons {
-    font-size: 1.75rem;
-    margin: 0 1rem;
+.icon {
+    color: #ffffff;
+    margin: 0 1.5rem;
 }
