@@ -1,3 +1,12 @@
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-bg-dark) inset;
+    -webkit-text-fill-color: #ffffff;
+}
+
+
+
 .section {
     padding: 4rem 0;
 }
@@ -141,4 +150,88 @@
     background-color: var(--color-primary);
     color: #ffffff;
     border-color: var(--color-primary);
+}
+
+/* Form */
+
+.label {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+}
+
+.input {
+    padding: 0.75rem;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background-color: var(--color-bg-dark);
+    transition: all 0.15s;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--color-neon);
+    box-shadow: var(--shadow-neo);
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.button {
+    display: block;
+    padding: 1rem 2rem;
+    background-color: var(--color-bg-dark);
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--shadow-neo);
+    transition: all 0.15s;
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: var(--neon-violet);
+    color: #000000;
+    box-shadow: none;
+    transform: translate(4px, 4px);
+}
+
+.textarea {
+    min-height: 150px;
+}
+
+
+@keyframes shake {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-8px); }
+    40%  { transform: translateX(8px); }
+    60%  { transform: translateX(-8px); }
+    80%  { transform: translateX(8px); }
+    100% { transform: translateX(0); }
+}
+
+.buttonWrapper {
+    position: relative;
+}
+
+.error {
+    color: #ff0000;
+    font-size: 1rem;
+    font-weight: 700;
+    z-index: 30;
+    text-align: center;
+    animation: shake 0.4s ease;
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
 }
