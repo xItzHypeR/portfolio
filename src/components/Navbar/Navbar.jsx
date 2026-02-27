@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <header className={styles.nav}>
       <div className={`container ${styles.inner}`}>
-        <a href="#" className={styles.logo}>ITZHYPER.PORTFOLIO</a>
+        <a href="#hero" className={styles.logo}>ITZHYPER.PORTFOLIO</a>
 
         <nav className={styles.links}>
           <a href="#about" className={styles.navLink}>ABOUT</a>
