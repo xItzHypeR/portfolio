@@ -39,7 +39,7 @@ export default function About() {
                         <div className={styles.rotatedBg} />
                         <div className={styles.imageFrame}>
                             <img
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuATDNafF68GM3trJlayC88MScowtHI1yf2I0NyokCf7ttjXCcdYAxiJp0c8Bm4xHVelFz9FxAqslhErLOFAjunQyQezR70qZKcdK-hEay-0sOCzfvM-Nd7wQpVAa_vL7xYqvRZ4BU9CBpr-ox4M3qil-CuVKA0ejaPLaqD5hYBfv5hJ4zpQTcCl22h2Cr0xz2MsxbTK-JilR07bxIwPCdXhNbCHkqJXXr208c4_8JGcyhOqBljA-gRJQmTEF9UrBiLmCOd3DcHmrCw2"
+                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop"
                                 alt="Minimalist laptop setup on a wooden desk"
                                 className={styles.photo}
                             />
