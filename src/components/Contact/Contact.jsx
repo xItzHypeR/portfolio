@@ -56,12 +56,12 @@ export default function Contact() {
                                 (in a good way).
                             </p>
                             <form className={styles.form} onSubmit={handleSubmit}>
-                                <label className={styles.label}>NAME</label>
-                                <input type="text" placeholder="Name" className={styles.input} value={name} onChange={(e) => setName(e.target.value)} />
-                                <label className={styles.label}>EMAIL</label>
-                                <input type="email" placeholder="Email" className={styles.input} value={email} onChange={(e) => setEmail(e.target.value)} />
-                                <label className={styles.label}>MESSAGE</label>
-                                <textarea className={`${styles.input} ${styles.textarea}`} placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                                <label htmlFor="name" className={styles.label}>NAME</label>
+                                <input id="name" type="text" placeholder="Name" className={styles.input} value={name} onChange={(e) => setName(e.target.value)} />
+                                <label htmlFor="email" className={styles.label}>EMAIL</label>
+                                <input id="email" type="email" placeholder="Email" className={styles.input} value={email} onChange={(e) => setEmail(e.target.value)} />
+                                <label htmlFor="message" className={styles.label}>MESSAGE</label>
+                                <textarea id="message" className={`${styles.input} ${styles.textarea}`} placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                                 <div className={styles.buttonWrapper}>
                                     {error && <p className={styles.error}>{error}</p>}
                                     <button type="submit" className={styles.button}>SEND MESSAGE</button>
