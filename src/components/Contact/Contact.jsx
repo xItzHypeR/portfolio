@@ -71,7 +71,6 @@ export default function Contact() {
                         <div className={styles.links}>
                             <a target="_blank" href="https://www.linkedin.com/in/gustavo-peralta-54a598249/" className={`${styles.socialBtn} ${styles.socialBtnLight}`}>LINKEDIN</a>
                             <a target="_blank" href="https://www.instagram.com/ItzHypeR.dev/" className={styles.socialBtn}>INSTAGRAM</a>
-                            <a href="/CV_Gustavo_Peralta.pdf" download="CV_Gustavo_Peralta.pdf" className={styles.socialBtn}>RESUME (PDF)</a>
                         </div>
                     </div>
                 </div>
