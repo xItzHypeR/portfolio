@@ -11,6 +11,7 @@ function ProjectCard({ project }) {
                     src={project.img}
                     alt={project.imgAlt}
                     className={styles.cardImg}
+                    loading="lazy"
                 />
             </div>
             <div className={styles.cardBody}>
