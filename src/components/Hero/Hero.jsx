@@ -47,6 +47,8 @@ export default function Hero() {
                             src="/GustavoPeralta.webp"
                             alt="Stylized developer portrait with tech aesthetic"
                             className={styles.photo}
+                            fetchpriority="high"
+                            loading="eager"
                         />
                         <div className={`${styles.corner} ${styles.cornerTL}`} />
                         <div className={`${styles.corner} ${styles.cornerTR}`} />
