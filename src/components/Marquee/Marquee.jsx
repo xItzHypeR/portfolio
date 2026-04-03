@@ -1,4 +1,5 @@
 import styles from './Marquee.module.css';
+import { motion } from 'motion/react';
 
 const techs = ['React', 'JS', 'Node.js', 'Java', 'C#', 'MySQL'];
 
@@ -18,13 +19,19 @@ function Track() {
 
 export default function Marquee() {
     return (
-        <div className={styles.wrapper}>
+        <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className={styles.wrapper}
+        >
             <div className={`${styles.scroll} animate-marquee`}>
                 <Track />
                 <Track />
                 <Track />
                 <Track />
             </div>
-        </div>
+        </motion.div>
     );
 }

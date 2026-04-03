@@ -13,7 +13,7 @@ export const projects = [
         stats: {
             role: 'Software Engineer',
             timeline: 'November 2025',
-            team: 'Estelí, Nicaragua'
+            team: '1 Developer'
         },
         img: '/ChatVerde.webp',
         imgAlt: 'Console conversational interface'
