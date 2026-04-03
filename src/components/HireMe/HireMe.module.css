@@ -12,7 +12,7 @@
     }
 }
 
-@keyframes bounce {
+/* @keyframes bounce {
 
     0%,
     100% {
@@ -22,7 +22,7 @@
     50% {
         transform: translateY(-10px);
     }
-}
+} */
 
 .fab {
     display: flex;

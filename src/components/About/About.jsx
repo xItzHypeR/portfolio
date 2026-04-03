@@ -1,4 +1,5 @@
 import styles from './About.module.css';
+import { motion } from 'motion/react';
 
 const skills = [
     'Java', 'C#', 'JavaScript (ES6+)', 'SQL',
@@ -12,7 +13,12 @@ export default function About() {
             <div className="container">
                 <div className={styles.grid}>
                     {/* Left: text */}
-                    <div>
+                    <motion.div 
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6 }}
+                    >
                         <h2 className={styles.headline}>
                             PURE <br />CODE. <br />NO FLUFF.
                         </h2>
@@ -32,10 +38,15 @@ export default function About() {
                                 ))}
                             </ul>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Right: image */}
-                    <div className={styles.imageWrapper}>
+                    <motion.div 
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className={styles.imageWrapper}
+                    >
                         <div className={styles.rotatedBg} />
                         <div className={styles.imageFrame}>
                             <img
@@ -44,7 +55,7 @@ export default function About() {
                                 className={styles.photo}
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
