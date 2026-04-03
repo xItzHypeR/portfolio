@@ -1,10 +1,17 @@
 import { Link } from 'react-router-dom';
 import { projects } from '../../data/projects';
 import styles from './Projects.module.css';
+import { motion } from 'motion/react';
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, index }) {
     return (
-        <article className={styles.card}>
+        <motion.article 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className={styles.card}
+        >
             <div className={styles.imgWrap}>
                 <div className={styles.imgOverlay} />
                 <img
@@ -33,7 +40,7 @@ function ProjectCard({ project }) {
                     <span className="material-icons">arrow_forward</span>
                 </Link>
             </div>
-        </article>
+        </motion.article>
     );
 }
 
@@ -46,8 +53,8 @@ export default function Projects() {
                     <span className={styles.sectionDate}>/// 2022 - 2025</span>
                 </div>
                 <div className={styles.grid}>
-                    {projects.map((p) => (
-                        <ProjectCard key={p.id} project={p} />
+                    {projects.map((p, index) => (
+                        <ProjectCard key={p.id} project={p} index={index} />
                     ))}
                 </div>
             </div>

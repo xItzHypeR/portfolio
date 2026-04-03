@@ -1,6 +1,6 @@
 import styles from './Contact.module.css';
 import emailjs from '@emailjs/browser';
-
+import { motion } from 'motion/react';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -45,7 +45,13 @@ export default function Contact() {
     return (
         <section id="contact" className={styles.section}>
             <div className="container">
-                <div className={styles.box}>
+                <motion.div 
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                    className={styles.box}
+                >
                     <div className={styles.glowBlob} />
                     <div className={styles.inner}>
                         <div className={styles.left}>
@@ -73,7 +79,7 @@ export default function Contact() {
                             <a target="_blank" href="https://www.instagram.com/ItzHypeR.dev/" className={styles.socialBtn}>INSTAGRAM</a>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
