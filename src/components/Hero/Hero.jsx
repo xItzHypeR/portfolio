@@ -1,11 +1,17 @@
 import styles from './Hero.module.css';
+import { motion } from 'motion/react';
 
 export default function Hero() {
     return (
         <section id="hero" className={styles.hero}>
             <div className={`container ${styles.inner}`}>
                 {/* Left column */}
-                <div className={styles.left}>
+                <motion.div 
+                    initial={{x: -50, opacity: 0}} 
+                    animate={{x: 0, opacity: 1}} 
+                    transition={{duration: 0.6, ease: "easeOut", delay: 0.2}} 
+                    className={styles.left}
+                >
                     <div className={styles.tagline}>
                         <p className={styles.role}>Full Stack Engineer</p>
                         <p className={styles.location}>BASED IN ESTELI, NICARAGUA</p>
@@ -35,10 +41,15 @@ export default function Hero() {
                             <span className="material-icons">code</span>
                         </a>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Right column: image card */}
-                <div className={styles.right}>
+                <motion.div 
+                    initial={{scale: 0.9, opacity: 0}} 
+                    animate={{scale: 1, opacity: 1}} 
+                    transition={{duration: 0.8, ease: "easeOut", delay: 0.4}} 
+                    className={styles.right}
+                >
                     <div className={`${styles.imageCard} code-overlay`}>
                         <div className={styles.gridOverlay} />
                         <div className={styles.colorOverlay} />
@@ -47,7 +58,7 @@ export default function Hero() {
                             src="/GustavoPeralta.webp"
                             alt="Stylized developer portrait with tech aesthetic"
                             className={styles.photo}
-                            fetchpriority="high"
+                            fetchPriority="high"
                             loading="eager"
                         />
                         <div className={`${styles.corner} ${styles.cornerTL}`} />
@@ -56,7 +67,7 @@ export default function Hero() {
                         <div className={`${styles.corner} ${styles.cornerBR}`} />
                         <div className={styles.devTag}>&lt;GUSTAVO PERALTA /&gt;</div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
