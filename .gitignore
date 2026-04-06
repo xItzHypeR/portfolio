@@ -27,3 +27,13 @@ dist-ssr
 .env
 
 .agents
+
+.claude
+
+.skills
+
+skills-lock.json
+
+.codebuddy
+
+.continue
