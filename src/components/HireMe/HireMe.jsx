@@ -1,9 +1,9 @@
 import styles from "./HireMe.module.css";
-import { motion } from "framer-motion";
+import { motion as Motion } from "motion/react";
 
 export default function HireMe() {
   return (
-    <motion.div
+    <Motion.div
       className={styles.wrapper}
 
       initial={{ y: 0 }}
@@ -18,6 +18,6 @@ export default function HireMe() {
       <a href="#contact" className={styles.fab}>
         HIRE ME
       </a>
-    </motion.div>
+    </Motion.div>
   );
 }
