@@ -2,7 +2,7 @@ import styles from './Contact.module.css';
 import emailjs from '@emailjs/browser';
 import { motion } from 'motion/react';
 import { useState } from 'react';
-import { databases, ID } from '../../lib/appwrite';
+// import { databases, ID } from '../../lib/appwrite';
 
 export default function Contact() {
     const [name, setName] = useState('');
@@ -39,23 +39,23 @@ export default function Contact() {
                 alert('Something went wrong.');
             });
 
-        const promise = databases.createDocument(
-            import.meta.env.VITE_APPWRITE_DATABASE_ID,
-            import.meta.env.VITE_APPWRITE_COLLECTION_ID,
-            ID.unique(),
-            {
-                name: name,
-                email: email,
-                message: message
-            }
-        );
-        promise.then((response) => {
-            setName('');
-            setEmail('');
-            setMessage('');
-        }).catch((error) => {
-            alert('Something went wrong.');
-        });
+        // const promise = databases.createDocument(
+        //     import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        //     import.meta.env.VITE_APPWRITE_COLLECTION_ID,
+        //     ID.unique(),
+        //     {
+        //         name: name,
+        //         email: email,
+        //         message: message
+        //     }
+        // );
+        // promise.then((response) => {
+        //     setName('');
+        //     setEmail('');
+        //     setMessage('');
+        // }).catch((error) => {
+        //     alert('Something went wrong.');
+        // });
 
 
     };
