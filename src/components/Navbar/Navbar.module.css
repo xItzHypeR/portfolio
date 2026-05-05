@@ -1,136 +1,129 @@
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    border-bottom: 2px solid var(--color-primary);
-    background-color: var(--color-bg-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--color-terminal-black);
+  border-bottom: 1px solid var(--color-text-gray);
 }
 
 .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
 }
 
-/* Logo */
 .logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    border: 2px solid var(--color-primary);
-    padding: 0.25rem 0.5rem;
-    box-shadow: var(--shadow-neo-sm);
-    background-color: var(--color-bg-dark);
-    transition: box-shadow 0.15s, transform 0.15s;
+  font-size: var(--text-body);
+  color: var(--color-active-white);
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
 }
 
 .logo:hover {
-    box-shadow: none;
-    transform: translate(2px, 2px);
+  animation: glitch-anim 0.3s ease-in-out;
 }
 
-/* Nav links */
 .links {
-    display: none;
-    align-items: center;
-    gap: 2rem;
-}
-
-@media (min-width: 768px) {
-    .links {
-        display: flex;
-    }
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .navLink {
-    font-size: 1.05rem;
-    font-weight: 500;
-    transition: color 0.15s;
+  font-size: var(--text-small);
+  color: var(--color-text-gray);
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  letter-spacing: 0.05em;
 }
 
-.navLink:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
+.navLink:hover,
+.navLink:focus {
+  color: var(--color-active-white);
+  border-bottom-color: var(--color-active-white);
 }
 
-.ctaBtn {
-    padding: 0.5rem 1.5rem;
-    background-color: var(--color-primary);
-    color: #ffffff;
-    font-weight: 700;
-    border: 2px solid transparent;
-    box-shadow: var(--shadow-neo-white);
-    transition: all 0.15s;
+.resumeLink {
+  font-size: var(--text-small);
+  color: var(--color-text-gray);
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--color-text-gray);
+  transition: color 0.2s, border-color 0.2s;
+  letter-spacing: 0.05em;
 }
 
-.ctaBtn:hover {
-    background-color: transparent;
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-    box-shadow: none;
-    transform: translate(4px, 4px);
+.resumeLink:hover {
+  color: var(--color-active-white);
+  border-bottom-color: var(--color-active-white);
 }
 
-.outlineBtn {
-    padding: 0.5rem 1.5rem;
-    background-color: transparent;
-    color: #ffffff;
-    font-weight: 700;
-    border: 2px solid var(--color-primary);
-    box-shadow: var(--shadow-neo-white);
-    transition: all 0.15s;
-}
-
-.outlineBtn:hover {
-    background-color: var(--color-primary);
-    color: var(--neon-violet);
-    border-color: var(--color-primary);
-    box-shadow: none;
-    transform: translate(4px, 4px);
-}
-
-/* Mobile menu button */
+/* Mobile hamburger */
 .menuBtn {
-    display: flex;
-    align-items: center;
-    background: none;
-    color: #ffffff;
-    padding: 0.4rem;
-    cursor: pointer;
-
+  display: none;
+  cursor: pointer;
 }
 
-.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-text-gray);
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(5px) translateX(3px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-5px) translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .menuBtn {
+    display: block;
+  }
+
+  .links {
+    position: fixed;
+    top: 56px;
     left: 0;
     right: 0;
-    background-color: var(--color-bg-dark);
-    border-bottom: 2px solid var(--color-primary);
-    padding: 2rem;
-    gap: 2rem;
-    align-items: center;
+    background-color: var(--color-terminal-black);
+    border-bottom: 1px solid var(--color-text-gray);
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 24px;
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    pointer-events: none;
+  }
 
-    .ctaBtn {
-        width: 85%;
-        text-align: center;
-    }
-
-    .outlineBtn {
-        width: 85%;
-        text-align: center;
-    }
-}
-
-@media (min-width: 768px) {
-    .menuBtn {
-        display: none;
-    }
+  .open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
 }

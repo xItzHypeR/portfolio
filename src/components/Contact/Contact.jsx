@@ -2,7 +2,6 @@ import styles from './Contact.module.css';
 import emailjs from '@emailjs/browser';
 import { motion } from 'motion/react';
 import { useState } from 'react';
-import { databases, ID } from '../../lib/appwrite';
 
 export default function Contact() {
     const [name, setName] = useState('');
@@ -15,7 +14,7 @@ export default function Contact() {
 
         if (!name || !email || !message) {
             setError('');
-            setTimeout(() => setError('Please fill in all fields.'), 10);
+            setTimeout(() => setError('> ERROR: ALL FIELDS REQUIRED.'), 10);
             return;
         }
 
@@ -30,72 +29,93 @@ export default function Contact() {
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
             .then(() => {
-                alert('Message sent!');
+                alert('> MESSAGE TRANSMITTED SUCCESSFULLY.');
                 setName('');
                 setEmail('');
                 setMessage('');
             })
-            .catch((error) => {
-                alert('Something went wrong.');
+            .catch(() => {
+                alert('> TRANSMISSION FAILED. RETRY.');
             });
-
-        // const promise = databases.createDocument(
-        //     import.meta.env.VITE_APPWRITE_DATABASE_ID,
-        //     import.meta.env.VITE_APPWRITE_COLLECTION_ID,
-        //     ID.unique(),
-        //     {
-        //         name: name,
-        //         email: email,
-        //         message: message
-        //     }
-        // );
-        // promise.then((response) => {
-        //     setName('');
-        //     setEmail('');
-        //     setMessage('');
-        // }).catch((error) => {
-        //     alert('Something went wrong.');
-        // });
-
-
     };
 
     return (
         <section id="contact" className={styles.section}>
             <div className="container">
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
-                    className={styles.box}
                 >
-                    <div className={styles.glowBlob} />
-                    <div className={styles.inner}>
-                        <div className={styles.left}>
-                            <h2 className={styles.title}>READY TO SCALE?</h2>
-                            <p className={styles.subtitle}>
-                                Currently available for freelance projects and open to full-time
-                                opportunities. Let&apos;s build something that breaks the internet
-                                (in a good way).
-                            </p>
-                            <form className={styles.form} onSubmit={handleSubmit}>
-                                <label htmlFor="name" className={styles.label}>NAME</label>
-                                <input id="name" type="text" placeholder="Name" className={styles.input} value={name} onChange={(e) => setName(e.target.value)} />
-                                <label htmlFor="email" className={styles.label}>EMAIL</label>
-                                <input id="email" type="email" placeholder="Email" className={styles.input} value={email} onChange={(e) => setEmail(e.target.value)} />
-                                <label htmlFor="message" className={styles.label}>MESSAGE</label>
-                                <textarea id="message" className={`${styles.input} ${styles.textarea}`} placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
-                                <div className={styles.buttonWrapper}>
-                                    {error && <p className={styles.error}>{error}</p>}
-                                    <button type="submit" className={styles.button}>SEND MESSAGE</button>
-                                </div>
-                            </form>
+                    <div className={styles.label}>/// CONTACT</div>
+                    <h2 className={styles.headline}>READY TO CONNECT?</h2>
+                    <p className={styles.subtitle}>
+                        CURRENTLY AVAILABLE FOR FREELANCE PROJECTS AND OPEN TO
+                        FULL-TIME OPPORTUNITIES.
+                    </p>
+
+                    <form className={styles.form} onSubmit={handleSubmit}>
+                        <label htmlFor="contact-name" className={styles.fieldLabel}>NAME</label>
+                        <input
+                            id="contact-name"
+                            type="text"
+                            placeholder="_"
+                            className={styles.input}
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+
+                        <label htmlFor="contact-email" className={styles.fieldLabel}>EMAIL</label>
+                        <input
+                            id="contact-email"
+                            type="email"
+                            placeholder="_"
+                            className={styles.input}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+
+                        <label htmlFor="contact-message" className={styles.fieldLabel}>MESSAGE</label>
+                        <textarea
+                            id="contact-message"
+                            className={`${styles.input} ${styles.textarea}`}
+                            placeholder="_"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                        />
+
+                        <div className={styles.submitRow}>
+                            {error && <p className={styles.error}>{error}</p>}
+                            <button type="submit" className={styles.submitBtn}>SEND_MESSAGE →</button>
                         </div>
-                        <div className={styles.links}>
-                            <a target="_blank" href="https://www.linkedin.com/in/gustavo-peralta-54a598249/" className={`${styles.socialBtn} ${styles.socialBtnLight}`}>LINKEDIN</a>
-                            <a target="_blank" href="https://www.instagram.com/ItzHypeR.dev/" className={styles.socialBtn}>INSTAGRAM</a>
-                        </div>
+                    </form>
+
+                    <div className={styles.socials}>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/gustavo-peralta-54a598249/"
+                            className={styles.socialLink}
+                        >
+                            LINKEDIN
+                        </a>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.instagram.com/ItzHypeR.dev/"
+                            className={styles.socialLink}
+                        >
+                            INSTAGRAM
+                        </a>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://github.com/xItzHypeR"
+                            className={styles.socialLink}
+                        >
+                            GITHUB
+                        </a>
                     </div>
                 </motion.div>
             </div>

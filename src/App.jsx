@@ -7,14 +7,13 @@ import Projects from './components/Projects/Projects';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-import HireMe from './components/HireMe/HireMe';
 import ProjectDetail from './components/ProjectDetail/ProjectDetail';
 
 function Home() {
   return (
     <>
       <Navbar />
-      <main className="bg-grid-pattern" style={{ paddingTop: '80px' }}>
+      <main>
         <Hero />
         <Marquee />
         <Projects />
@@ -22,7 +21,6 @@ function Home() {
         <Contact />
       </main>
       <Footer />
-      <HireMe />
     </>
   );
 }

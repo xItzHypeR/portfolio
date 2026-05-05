@@ -2,80 +2,87 @@ import styles from "./Hero.module.css";
 import { motion } from "motion/react";
 
 export default function Hero() {
+  const today = new Date().toLocaleDateString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric'
+  }).toUpperCase();
+
   return (
     <section id="hero" className={styles.hero}>
       <div className={`container ${styles.inner}`}>
-        {/* Left column */}
+        {/* System status line */}
         <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          className={styles.left}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className={styles.status}
         >
-          <div className={styles.tagline}>
-            <p className={styles.role}>Full Stack Engineer</p>
-            <p className={styles.location}>BASED IN ESTELI, NICARAGUA</p>
-          </div>
-
-          <h1 className={styles.headline}>
-            BUILDING <br />
-            <span className={styles.outlineWord}>ROBUST</span> <br />
-            SYSTEMS.
-          </h1>
-
-          <div className={styles.descBox}>
-            <p>
-              Fullstack developer with experience building web applications and
-              automation tools. Skilled in Java, C#, JavaScript, and React, with
-              a strong focus on problem solving, performance optimization, and
-              clean code practices. Proven ability to design efficient solutions
-              and deliver measurable improvements in performance and usability.
-            </p>
-          </div>
-
-          <div className={styles.ctas}>
-            <a href="#projects" className={styles.btnPrimary}>
-              VIEW PROJECTS
-              <span className="material-icons">arrow_downward</span>
-            </a>
-            <a
-              href="https://github.com/xItzHypeR"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.btnSecondary}
-            >
-              GITHUB
-              <span className="material-icons">code</span>
-            </a>
-          </div>
+          <span className={styles.statusDot} />
+          <span>FULL STACK ENGINEER</span>
+          <span>—</span>
+          <span>{today}</span>
         </motion.div>
 
-        {/* Right column: image card */}
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className={styles.right}
+        {/* Main headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className={styles.headline}
         >
-          <div className={`${styles.imageCard} code-overlay`}>
-            <div className={styles.gridOverlay} />
-            <div className={styles.colorOverlay} />
-            <div className={styles.scanlines} />
-            <img
-              src="/GustavoPeralta.webp"
-              alt="Stylized developer portrait with tech aesthetic"
-              className={styles.photo}
-              fetchPriority="high"
-              loading="eager"
-            />
-            <div className={`${styles.corner} ${styles.cornerTL}`} />
-            <div className={`${styles.corner} ${styles.cornerTR}`} />
+          HI! I'M GUSTAVO PERALTA
+          <span className={styles.cursor} />
+        </motion.h1>
 
-            <div className={`${styles.corner} ${styles.cornerBR}`} />
-            <div className={styles.devTag}>&lt;GUSTAVO PERALTA /&gt;</div>
-          </div>
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className={styles.desc}
+        >
+          ESTELI-BASED, FULLSTACK DEVELOPER. BUILDING ROBUST SYSTEMS
+          WITH JAVA, C#, JAVASCRIPT, AND REACT. FOCUSED ON
+          PERFORMANCE OPTIMIZATION AND CLEAN CODE PRACTICES.
+        </motion.p>
+
+        {/* Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className={styles.heroLinks}
+        >
+          <a href="#projects" className={styles.heroLink}>PROJECTS</a>
+          <a
+            href="https://github.com/xItzHypeR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.heroLink}
+          >
+            GITHUB
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gustavo-peralta-54a598249/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.heroLink}
+          >
+            LINKEDIN
+          </a>
         </motion.div>
       </div>
+
+      {/* Decorative channel number */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.05 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        className={styles.channel}
+      >
+        CH—01
+      </motion.div>
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export default function Footer() {
     return (
-        <motion.footer 
+        <motion.footer
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -11,10 +11,8 @@ export default function Footer() {
             className={styles.footer}
         >
             <div className={`container ${styles.inner}`}>
-                <div className={styles.brand}>
-                    <span className={styles.dot} />
-                    <p className={styles.copy}>© {new Date().getFullYear()} ITZHYPER PORTFOLIO</p>
-                </div>
+                <p className={styles.copy}>© {new Date().getFullYear()} GUSTAVO PERALTA</p>
+                <a href="#hero" className={styles.backTop}>BACK TO TOP ↑</a>
             </div>
         </motion.footer>
     );

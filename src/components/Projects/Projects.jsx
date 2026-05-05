@@ -3,44 +3,28 @@ import { projects } from '../../data/projects';
 import styles from './Projects.module.css';
 import { motion } from 'motion/react';
 
-function ProjectCard({ project, index }) {
+function ProjectRow({ project, index }) {
+    const num = String(index + 1).padStart(2, '0');
+
     return (
-        <motion.article 
-            initial={{ opacity: 0, y: 50 }}
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={styles.card}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4, delay: index * 0.08 }}
         >
-            <div className={styles.imgWrap}>
-                <div className={styles.imgOverlay} />
-                <img
-                    src={project.img}
-                    alt={project.imgAlt}
-                    className={styles.cardImg}
-                    loading="lazy"
-                />
-            </div>
-            <div className={styles.cardBody}>
-                <div className={styles.cardHeader}>
-                    <div>
-                        <h3 className={styles.cardTitle}>{project.title}</h3>
-                        <div className={styles.techContainer}>
-                            {project.techList.map((tech, index) => (
-                                <span key={`${tech}-${index}`} className={styles.cardTech}>
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
+            <Link to={`/project/${project.id}`} className={styles.projectRow}>
+                <span className={styles.projectIndex}>{num}</span>
+                <div className={styles.projectContent}>
+                    <h3 className={styles.projectTitle}>{project.title}</h3>
+                    <span className={styles.projectTagline}>{project.tagline}</span>
                 </div>
-                <p className={styles.cardDesc}>{project.desc}</p>
-                <Link to={`/project/${project.id}`} className={styles.caseStudyBtn}>
-                    View Case Study
-                    <span className="material-icons">arrow_forward</span>
-                </Link>
-            </div>
-        </motion.article>
+                <div className={styles.projectMeta}>
+                    <span className={styles.projectTech}>{project.tech}</span>
+                    <span className={styles.arrow}>→</span>
+                </div>
+            </Link>
+        </motion.div>
     );
 }
 
@@ -50,11 +34,11 @@ export default function Projects() {
             <div className="container">
                 <div className={styles.sectionHeader}>
                     <h2 className={styles.sectionTitle}>SELECTED WORKS</h2>
-                    <span className={styles.sectionDate}>/// 2022 - 2025</span>
+                    <span className={styles.sectionDate}>/// 2023 — 2025</span>
                 </div>
-                <div className={styles.grid}>
+                <div className={styles.list}>
                     {projects.map((p, index) => (
-                        <ProjectCard key={p.id} project={p} index={index} />
+                        <ProjectRow key={p.id} project={p} index={index} />
                     ))}
                 </div>
             </div>

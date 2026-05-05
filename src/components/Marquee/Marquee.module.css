@@ -1,39 +1,33 @@
 .wrapper {
-    width: 110%;
-    margin-left: -5%;
-    background-color: var(--color-primary);
-    border-top: 4px solid #000000;
-    border-bottom: 4px solid #000000;
-    overflow: hidden;
-    padding: 1.25rem 0;
-    transform: rotate(-1.5deg);
-    position: relative;
-    z-index: 20;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  border-top: 1px solid var(--color-text-gray);
+  border-bottom: 1px solid var(--color-text-gray);
+  overflow: hidden;
+  padding: 16px 0;
+  background-color: var(--color-terminal-black);
 }
 
 .scroll {
-    white-space: nowrap;
-    display: flex;
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
 }
 
 .track {
-    display: inline-flex;
-    align-items: center;
-    padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .item {
-    display: inline-flex;
-    align-items: center;
-    font-size: clamp(1.5rem, 4vw, 3.5rem);
-    font-weight: 700;
-    color: #ffffff;
-    text-transform: uppercase;
+  font-size: var(--text-body);
+  color: var(--color-text-gray);
+  text-transform: uppercase;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
-.icon {
-    color: #ffffff;
-    margin: 0 1.5rem;
+.separator {
+  color: var(--color-text-gray);
+  opacity: 0.4;
 }

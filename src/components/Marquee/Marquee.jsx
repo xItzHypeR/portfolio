@@ -1,7 +1,7 @@
 import styles from './Marquee.module.css';
 import { motion } from 'motion/react';
 
-const techs = ['React', 'JS', 'Node.js', 'Java', 'C#', 'MySQL'];
+const techs = ['REACT', 'JAVASCRIPT', 'NODE.JS', 'JAVA', 'C#', 'SQL', 'VITE', 'GIT'];
 
 function Track() {
     return (
@@ -9,8 +9,7 @@ function Track() {
             {techs.map((t, i) => (
                 <span key={`${t}-${i}`} className={styles.item}>
                     {t}
-                    <span className={`material-icons ${styles.icon}`}>bolt</span>
-
+                    <span className={styles.separator}>///</span>
                 </span>
             ))}
         </span>
@@ -19,7 +18,7 @@ function Track() {
 
 export default function Marquee() {
     return (
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
