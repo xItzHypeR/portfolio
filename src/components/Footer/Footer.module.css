@@ -38,6 +38,12 @@
     color: #ffffff;
 }
 
+.note {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
 .links {
     display: flex;
     gap: 2rem;

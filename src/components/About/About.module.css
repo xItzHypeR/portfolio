@@ -37,6 +37,42 @@
     line-height: 1.6;
 }
 
+.profileMeta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profileMeta div {
+    border-left: 2px solid var(--neon-violet);
+    padding-left: 0.75rem;
+}
+
+.profileMeta span,
+.profileMeta strong {
+    display: block;
+}
+
+.profileMeta span {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35rem;
+}
+
+.profileMeta strong {
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+    .profileMeta {
+        grid-template-columns: 1fr;
+    }
+}
+
 .skillsBox {
     display: inline-block;
     background-color: var(--color-bg-dark);

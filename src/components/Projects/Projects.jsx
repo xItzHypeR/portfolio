@@ -25,6 +25,7 @@ function ProjectCard({ project, index }) {
                 <div className={styles.cardHeader}>
                     <div>
                         <h3 className={styles.cardTitle}>{project.title}</h3>
+                        <span className={styles.cardScope}>{project.kind}</span>
                         <div className={styles.techContainer}>
                             {project.techList.map((tech, index) => (
                                 <span key={`${tech}-${index}`} className={styles.cardTech}>
@@ -49,8 +50,13 @@ export default function Projects() {
         <section id="projects" className={styles.section}>
             <div className="container">
                 <div className={styles.sectionHeader}>
-                    <h2 className={styles.sectionTitle}>SELECTED WORKS</h2>
-                    <span className={styles.sectionDate}>/// 2022 - 2025</span>
+                    <div>
+                        <h2 className={styles.sectionTitle}>SELECTED WORKS</h2>
+                        <p className={styles.sectionIntro}>
+                            Most of these began as academic or personal builds. They show how I approach real product problems.
+                        </p>
+                    </div>
+                    <span className={styles.sectionDate}>/// 2023 - 2025</span>
                 </div>
                 <div className={styles.grid}>
                     {projects.map((p, index) => (
