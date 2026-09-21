@@ -19,7 +19,7 @@ export default function Hero() {
 
           <h1 className={styles.headline}>
             BUILDING <br />
-            <span className={styles.outlineWord}>USEFUL</span> <br />
+            <span className={styles.outlineWord}>ROBUST</span> <br />
             DIGITAL WORK.
           </h1>
 
