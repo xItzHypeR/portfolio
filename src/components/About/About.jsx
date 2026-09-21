@@ -1,5 +1,6 @@
 import styles from './About.module.css';
 import { motion } from 'motion/react';
+import ToolIcon from './ToolIcons';
 
 const skills = [
     'Java', 'C#', 'JavaScript (ES6+)', 'SQL',
@@ -43,12 +44,12 @@ export default function About() {
                             </div>
                         </div>
                         <div className={styles.skillsBox}>
-                            <h3 className={styles.skillsTitle}>Tools I Use</h3>
+                                <h3 className={styles.skillsTitle}>Tools I Use</h3>
                             <ul className={styles.skillsList}>
                                 {skills.map((s) => (
                                     <li key={s} className={styles.skillItem}>
-                                        <span className={styles.dot} />
-                                        {s}
+                                        <ToolIcon name={s} className={styles.skillIcon} />
+                                        <span>{s}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -67,7 +68,7 @@ export default function About() {
                             <span>01 / 04</span>
                         </div>
                         <div className={styles.cardIdentity}>
-                            <div className={styles.initials}>GP</div>
+                            <div className={styles.initials}><img src="/gp-logo.svg" alt="GP" /></div>
                             <div>
                                 <p className={styles.cardEyebrow}>GUSTAVO PERALTA</p>
                                 <h3 className={styles.cardRole}>COMPUTER SYSTEMS<br />ENGINEERING STUDENT</h3>
