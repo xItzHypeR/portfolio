@@ -72,8 +72,8 @@ portfolio/
 
 ### Prerequisites
 
-- **Node.js** v18 or higher
-- **npm** v9 or higher
+- **Node.js** v20.19 or higher
+- **pnpm** v11
 
 ### Installation
 
@@ -85,13 +85,13 @@ git clone https://github.com/xItzHypeR/portfolio.git
 cd portfolio
 
 # Install dependencies
-npm install
+pnpm install
 ```
 
 ### Development
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 The app will be available at `http://localhost:5173` (also accessible on your local network).
@@ -99,13 +99,13 @@ The app will be available at `http://localhost:5173` (also accessible on your lo
 ### Build for Production
 
 ```bash
-npm run build
+pnpm build
 ```
 
 ### Preview Production Build
 
 ```bash
-npm run preview
+pnpm preview
 ```
 
 ---
@@ -114,10 +114,10 @@ npm run preview
 
 | Script | Description |
 |--------|-------------|
-| `npm run dev` | Start development server (with network host) |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint |
+| `pnpm dev` | Start development server (with network host) |
+| `pnpm build` | Build for production and prerender project metadata |
+| `pnpm preview` | Preview production build locally |
+| `pnpm lint` | Run ESLint |
 
 ---
 
