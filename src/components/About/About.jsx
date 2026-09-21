@@ -60,26 +60,43 @@ export default function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className={styles.profileBoard}
+                        className={styles.profileCard}
                     >
-                        <div className={styles.boardGrid} />
-                        <div className={styles.boardTopline}>
-                            <span>ABOUT ME / 001</span>
-                            <span>GP</span>
+                        <div className={styles.cardHeader}>
+                            <span>PROFILE CARD</span>
+                            <span>01 / 04</span>
                         </div>
-                        <div className={styles.boardProfile}>
-                            <p className={styles.boardName}>GUSTAVO<br />PERALTA</p>
-                            <p className={styles.boardRole}>COMPUTER SYSTEMS<br />ENGINEERING STUDENT</p>
+                        <div className={styles.cardIdentity}>
+                            <div className={styles.initials}>GP</div>
+                            <div>
+                                <p className={styles.cardEyebrow}>GUSTAVO PERALTA</p>
+                                <h3 className={styles.cardRole}>COMPUTER SYSTEMS<br />ENGINEERING STUDENT</h3>
+                            </div>
                         </div>
-                        <div className={styles.boardRule} />
-                        <div className={styles.boardList}>
-                            <span>BASED IN ESTELÍ, NICARAGUA</span>
-                            <span>REMOTE / ASYNC COLLABORATION</span>
-                            <span>SPANISH + WRITTEN ENGLISH</span>
+                        <p className={styles.cardQuote}>
+                            I&apos;m building a career around clear communication, careful work, and steady iteration.
+                        </p>
+                        <div className={styles.cardFacts}>
+                            <div>
+                                <span>FOCUS</span>
+                                <strong>Web apps + practical tools</strong>
+                            </div>
+                            <div>
+                                <span>BASED IN</span>
+                                <strong>Estelí, Nicaragua</strong>
+                            </div>
+                            <div>
+                                <span>COLLABORATION</span>
+                                <strong>Remote / async</strong>
+                            </div>
+                            <div>
+                                <span>LANGUAGES</span>
+                                <strong>Spanish + written English</strong>
+                            </div>
                         </div>
-                        <div className={styles.boardFooter}>
-                            <span>WEB APPS · PRACTICAL TOOLS</span>
+                        <div className={styles.cardFooter}>
                             <span>OPEN TO OPPORTUNITIES</span>
+                            <span>EST. 2026</span>
                         </div>
                     </motion.div>
                 </div>
