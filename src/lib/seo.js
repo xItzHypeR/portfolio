@@ -1,13 +1,7 @@
 import { useEffect } from 'react';
+import { HOME_META, SITE_URL, getProjectMeta } from './seoConfig';
 
-export const SITE_URL = 'https://portfolio-itzhyper.vercel.app';
-
-export const HOME_META = {
-    title: 'Gustavo Peralta | Full-Stack Developer',
-    description: 'Portfolio of Gustavo Peralta, a full-stack developer from Nicaragua building useful digital tools and experiences.',
-    image: '/GustavoPeralta.webp',
-    path: '/',
-};
+export { HOME_META, SITE_URL, getProjectMeta };
 
 function setMeta(attribute, key, content) {
     let element = document.querySelector(`meta[${attribute}="${key}"]`);
@@ -33,19 +27,50 @@ function setCanonical(path) {
     element.setAttribute('href', `${SITE_URL}${path === '/' ? '/' : path}`);
 }
 
-export function usePageMeta({ title, description, image, path }) {
+function setStructuredData(serializedData) {
+    let element = document.querySelector('#structured-data');
+
+    if (!serializedData) {
+        element?.remove();
+        return;
+    }
+
+    if (!element) {
+        element = document.createElement('script');
+        element.id = 'structured-data';
+        element.type = 'application/ld+json';
+        document.head.appendChild(element);
+    }
+
+    element.textContent = serializedData;
+}
+
+export function usePageMeta({
+    title,
+    description,
+    image,
+    path,
+    robots = 'index, follow',
+    type = 'website',
+    structuredData,
+}) {
+    const serializedData = structuredData ? JSON.stringify(structuredData) : '';
+
     useEffect(() => {
         const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`;
 
         document.title = title;
         setMeta('name', 'description', description);
+        setMeta('name', 'robots', robots);
         setMeta('property', 'og:title', title);
         setMeta('property', 'og:description', description);
+        setMeta('property', 'og:type', type);
         setMeta('property', 'og:url', `${SITE_URL}${path === '/' ? '/' : path}`);
         setMeta('property', 'og:image', imageUrl);
         setMeta('name', 'twitter:title', title);
         setMeta('name', 'twitter:description', description);
         setMeta('name', 'twitter:image', imageUrl);
         setCanonical(path);
-    }, [description, image, path, title]);
+        setStructuredData(serializedData);
+    }, [description, image, path, robots, serializedData, title, type]);
 }
