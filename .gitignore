@@ -39,3 +39,5 @@ skills-lock.json
 .continue
 
 .unlighthouse
+
+.pnpm-store/
