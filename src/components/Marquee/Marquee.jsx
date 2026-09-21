@@ -1,7 +1,7 @@
 import styles from './Marquee.module.css';
 import { motion } from 'motion/react';
 
-const techs = ['React', 'JS', 'Node.js', 'Java', 'C#', 'MySQL'];
+const techs = ['React', 'JavaScript', 'Java', 'C#', 'SQL', 'UI / UX'];
 
 function Track() {
     return (

@@ -13,41 +13,38 @@ export default function Hero() {
           className={styles.left}
         >
           <div className={styles.tagline}>
-            <p className={styles.role}>Full Stack Engineer</p>
-            <p className={styles.location}>BASED IN ESTELI, NICARAGUA</p>
+            <p className={styles.role}>Full-Stack Developer &amp; Creative Builder</p>
+            <p className={styles.location}>BASED IN ESTELÍ, NICARAGUA · AVAILABLE WORLDWIDE</p>
           </div>
 
           <h1 className={styles.headline}>
             BUILDING <br />
-            <span className={styles.outlineWord}>ROBUST</span> <br />
-            SYSTEMS.
+            <span className={styles.outlineWord}>USEFUL</span> <br />
+            DIGITAL WORK.
           </h1>
 
           <div className={styles.descBox}>
             <p>
-              Fullstack developer with experience building web applications and
-              automation tools. Skilled in Java, C#, JavaScript, and React, with
-              a strong focus on problem solving, performance optimization, and
-              clean code practices. Proven ability to design efficient solutions
-              and deliver measurable improvements in performance and usability.
+              I&apos;m Gustavo, a full-stack developer who builds responsive websites
+              and practical software for people and small teams. I bring together
+              solid code, thoughtful interfaces, and a visual eye shaped by design.
             </p>
           </div>
 
           <div className={styles.ctas}>
             <a href="#projects" className={styles.btnPrimary}>
-              VIEW PROJECTS
+              SEE MY WORK
               <span className="material-icons">arrow_downward</span>
             </a>
             <a
-              href="https://github.com/xItzHypeR"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className={styles.btnSecondary}
             >
-              GITHUB
-              <span className="material-icons">code</span>
+              LET&apos;S TALK
+              <span className="material-icons">arrow_forward</span>
             </a>
           </div>
+          <p className={styles.availability}>Remote-friendly · async collaboration · Spanish + written English</p>
         </motion.div>
 
         {/* Right column: image card */}

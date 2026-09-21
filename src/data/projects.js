@@ -2,18 +2,18 @@ export const projects = [
     {
         id: 'chatverde',
         title: 'CHAT VERDE',
-        tagline: 'CONVERSATIONAL APP',
+        tagline: 'NATURAL-LANGUAGE SEARCH',
         tech: 'F# • .NET • NLP • C#',
         techList: ['F#', '.NET', 'NLP', 'C#', 'Windows Forms'],
-        badge: '',
-        desc: 'Optimized search performance handling natural language queries with under 100ms response times.',
-        fullDesc: 'A conversational console application developed in F# on .NET to query the "Medicina Verde 100% Natural" product catalog using natural language. It features advanced search capabilities with exact tokenization and intent recognition.',
-        challenge: 'Finding products in a catalog of 500 items was difficult due to strict spelling requirements and lack of natural language understanding, causing a high match loss for common spelling variations.',
-        solution: 'I developed a search engine prioritizing specific fields with tokenization and stopword removal, improving precision by over 10%. I implemented case and accent-insensitive text normalization ending in 0% match loss, and integrated intent recognition to list full categories (e.g., "shampoos").',
+        kind: 'ACADEMIC BUILD',
+        desc: 'A conversational catalog search that understands natural-language product queries.',
+        fullDesc: 'An academic console application built in F# and .NET to explore the Medicina Verde catalog through natural-language queries. The project focuses on text normalization, tokenization, stopword handling, and intent recognition.',
+        challenge: 'A strict text search made it hard to find products when a query included accents, different casing, or a category instead of an exact product name.',
+        solution: 'I built a small search pipeline that normalizes user input, removes stopwords, tokenizes terms, and recognizes category intents. The result is a clearer way to explore the catalog than exact-match search.',
         stats: {
-            role: 'Software Engineer',
-            timeline: 'November 2025',
-            team: '1 Developer'
+            role: 'Solo developer',
+            timeline: 'Academic project · 2025',
+            team: '1 developer'
         },
         img: '/ChatVerde.webp',
         imgAlt: 'Console conversational interface'
@@ -21,18 +21,18 @@ export const projects = [
     {
         id: 'allegra',
         title: 'ALLEGRA E-COMMERCE',
-        tagline: 'E-COMMERCE',
+        tagline: 'E-COMMERCE PROTOTYPE',
         tech: 'React • Vite • Tailwind CSS',
         techList: ['React', 'Vite', 'API'],
-        badge: '',
-        desc: 'Reduced page load time by 60% through a complete architectural refactor.',
-        fullDesc: 'A high-performance e-commerce platform built to handle complex checkout flows and high traffic. The project focused on transitioning a legacy codebase to a modern component-based architecture.',
-        challenge: 'The existing legacy HTML/JavaScript codebase suffered from poor performance and difficulty in maintenance. Implementing a secure, multi-method checkout flow required careful integration of multiple payment gateway APIs and complex form validations.',
-        solution: 'I refactored the entire frontend using Vite and React, implementing a robust state management system. I also integrated several payment gateway APIs and developed an asynchronous form validation system that significantly reduced user input errors.',
+        kind: 'ACADEMIC BUILD',
+        desc: 'A responsive e-commerce prototype with a component-based React architecture.',
+        fullDesc: 'An academic e-commerce prototype focused on a clear shopping experience, reusable React components, and responsive layouts. It explores the structure a small online store needs before connecting a production backend.',
+        challenge: 'The store concept needed a simple path from browsing products to reviewing a cart, while remaining easy to maintain as the interface grew.',
+        solution: 'I split the interface into reusable React components, organized the product data, and designed responsive product, cart, and checkout screens with clear interaction states.',
         stats: {
-            role: 'Full Stack Engineer',
-            timeline: 'July 2025',
-            team: '4 Developers'
+            role: 'Frontend developer',
+            timeline: 'Academic project · 2025',
+            team: 'Student team'
         },
         img: '/TiendaDeRopaAllegra.webp',
         imgAlt: 'E-commerce dashboard interface'
@@ -40,18 +40,18 @@ export const projects = [
     {
         id: 'directory',
         title: 'BUSINESS DIRECTORY',
-        tagline: 'DIRECTORY APP',
+        tagline: 'LOCAL DIRECTORY CONCEPT',
         tech: 'JavaScript • Tailwind CSS',
         techList: ['JavaScript', 'Tailwind CSS', 'Google Maps API', 'Accessibility'],
-        badge: '',
-        desc: 'Interactive search platform for local businesses with real-time filtering.',
-        fullDesc: 'A comprehensive platform designed to digitize the online presence of local businesses. It features a high-performance search engine and dynamic mapping.',
-        challenge: 'Many local businesses lacked an online presence or had difficult-to-find information. The goal was to create a highly accessible (90+ Lighthouse score) platform that would be easy for anyone to use.',
-        solution: 'I developed an interactive search platform with real-time filtering and dynamic map rendering using the Google Maps API. I optimized the user experience with efficient CSS and responsive design principles.',
+        kind: 'ACADEMIC BUILD',
+        desc: 'A local business directory concept with search, filters, and map context.',
+        fullDesc: 'A directory concept for helping people discover local businesses through searchable information, filters, and map-based context. The project explores how a small community-focused product can stay useful and easy to navigate.',
+        challenge: 'Useful local information was scattered and difficult to compare. The interface needed to make discovery feel quick on both desktop and mobile.',
+        solution: 'I built an interactive search experience with client-side filtering, map context through the Google Maps API, and responsive layouts that keep the most important business details visible.',
         stats: {
-            role: 'Frontend Developer',
-            timeline: 'June 2025',
-            team: '1 Developer'
+            role: 'Frontend developer',
+            timeline: 'Academic project · 2025',
+            team: '1 developer'
         },
         img: '/EsteliHub.webp',
         imgAlt: 'Abstract map interface'
@@ -59,18 +59,18 @@ export const projects = [
     {
         id: 'productivity',
         title: 'PROD SYSTEM',
-        tagline: 'ERP SYSTEM',
+        tagline: 'PRODUCTION TRACKING',
         tech: 'Java • SQL • Database Design',
         techList: ['Java', 'SQL', 'MySQL', 'Database Normalization', 'KPI Visualization'],
-        badge: '',
-        desc: 'Optimized performance report generation by 30% via database normalization.',
-        fullDesc: 'A robust internal tool for tracking and visualizing production metrics and KPIs in real-time, helping managers make data-driven decisions.',
-        challenge: 'The existing system suffered from significant data redundancy and slow query times, making real-time tracking almost impossible for large datasets.',
-        solution: 'I designed a normalized relational database schema that reduced redundancy and improved query speed by 30%. I then built a full CRUD application that allowed managers to visualize KPIs instantly.',
+        kind: 'ACADEMIC BUILD',
+        desc: 'A production tracking concept for recording output and visualizing operational KPIs.',
+        fullDesc: 'An academic internal-tool concept for recording production data and presenting it through useful KPIs. The project combines relational database design with a practical CRUD workflow for day-to-day operations.',
+        challenge: 'The workflow needed a reliable way to organize production records and turn them into information a manager could understand quickly.',
+        solution: 'I modeled a normalized relational database, built the core CRUD flow in Java, and designed KPI views that make the most relevant operational data easier to scan.',
         stats: {
-            role: 'Backend Developer',
-            timeline: 'June 2023',
-            team: '1 Developer'
+            role: 'Backend developer',
+            timeline: 'Academic project · 2023',
+            team: '1 developer'
         },
         img: '/prodSystem.webp',
         imgAlt: 'Database architecture diagram style visualization'
@@ -78,18 +78,18 @@ export const projects = [
     {
         id: 'cashcrafter',
         title: 'CASH CRAFTER',
-        tagline: 'FINTECH TOOL',
+        tagline: 'DESKTOP FINANCE TOOL',
         tech: 'Java • C# • .NET',
         techList: ['Java', 'C#', '.NET', 'Windows Forms', 'Financial Logic'],
-        badge: '',
-        desc: 'Reduced manual accounting time by 40% for small merchants.',
-        fullDesc: 'A powerful desktop financial calculator designed specifically for small merchants who need quick, reliable accounting calculations.',
-        challenge: 'Small merchants were spending too much time on manual accounting calculations, which was prone to human error and slowed down business operations.',
-        solution: 'I engineered an automated desktop tool with an intuitive C# interface that handled complex financial formulas instantly. I also led a small team of students through the agile development lifecycle.',
+        kind: 'ACADEMIC BUILD',
+        desc: 'A desktop finance calculator for repetitive small-business calculations.',
+        fullDesc: 'An academic desktop tool designed to make everyday financial calculations easier for small merchants. The project combines a focused Windows Forms interface with reusable financial logic.',
+        challenge: 'Manual calculations were repetitive and easy to get wrong. The tool needed to make common scenarios understandable without adding unnecessary complexity.',
+        solution: 'I separated the financial formulas from the interface, created a focused C# workflow, and collaborated with a small student team to turn the requirements into a usable desktop tool.',
         stats: {
-            role: 'Software Architect and Developer',
-            timeline: 'June 2023',
-            team: '3 Students'
+            role: 'Developer',
+            timeline: 'Academic project · 2023',
+            team: '3 students'
         },
         img: '/cashcrafter.webp',
         imgAlt: 'Financial calculations interface'

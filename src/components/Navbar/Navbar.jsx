@@ -13,12 +13,13 @@ export default function Navbar() {
 
     className={styles.nav}>
       <div className={`container ${styles.inner}`}>
-        <a href="#hero" className={styles.logo}>ITZHYPER.PORTFOLIO</a>
+        <a href="#hero" className={styles.logo}>GUSTAVO.PERALTA</a>
 
         <nav className={styles.links + ' ' + (isOpen ? styles.open : '')}>
+          <a href="#projects" className={styles.navLink} onClick={() => setIsOpen(false)} >WORK</a>
           <a href="#about" className={styles.navLink} onClick={() => setIsOpen(false)} >ABOUT</a>
-          <a download href="/CV_Gustavo_Peralta.pdf" className={styles.outlineBtn} onClick={() => setIsOpen(false)}>DOWNLOAD RESUME</a>
-          <a href="#contact" className={styles.ctaBtn} onClick={() => setIsOpen(false)}>GET IN TOUCH</a>
+          <a download href="/CV_Gustavo_Peralta.pdf" className={styles.outlineBtn} onClick={() => setIsOpen(false)}>RESUME</a>
+          <a href="#contact" className={styles.ctaBtn} onClick={() => setIsOpen(false)}>LET&apos;S TALK</a>
 
         </nav>
         <div className={styles.menuBtn}>

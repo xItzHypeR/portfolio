@@ -37,12 +37,61 @@
     line-height: 1.6;
 }
 
+.profileMeta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profileMeta div {
+    border-left: 2px solid var(--neon-violet);
+    padding-left: 0.75rem;
+}
+
+.profileMeta span,
+.profileMeta strong {
+    display: block;
+}
+
+.profileMeta span {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35rem;
+}
+
+.profileMeta strong {
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+    .profileMeta {
+        grid-template-columns: 1fr;
+    }
+}
+
 .skillsBox {
-    display: inline-block;
+    display: block;
+    width: 100%;
+    max-width: 34rem;
     background-color: var(--color-bg-dark);
     border: 2px solid #ffffff;
     padding: 1.5rem;
     box-shadow: var(--shadow-neo-white);
+    margin-top: 1rem;
+    box-sizing: border-box;
+}
+
+.skillsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.6rem;
 }
 
 .skillsTitle {
@@ -50,59 +99,223 @@
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.skillsCount {
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--neon-violet);
+    letter-spacing: 0.08em;
 }
 
 .skillsList {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 1.25rem;
 }
 
 .skillItem {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.65rem;
     font-family: monospace;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.3rem 0.45rem;
+    border-radius: 2px;
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    min-width: 0;
 }
 
-.dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--color-primary);
+.skillItem:hover {
+    color: #ffffff;
+    background-color: rgba(191, 64, 255, 0.12);
+    transform: translateX(3px);
+}
+
+.skillIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    color: var(--neon-violet);
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* Image column */
-.imageWrapper {
-    position: relative;
-}
-
-.rotatedBg {
-    position: absolute;
-    inset: -1rem;
-    background-color: var(--color-bg-dark);
-    border: 2px solid #ffffff;
-    opacity: 0.5;
-    z-index: 0;
-    transform: rotate(3deg);
-}
-
-.imageFrame {
-    position: relative;
-    z-index: 10;
-    border: 4px solid #ffffff;
-    background-color: var(--color-bg-dark);
-    padding: 0.5rem;
-}
-
-.photo {
+.skillIcon svg {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: grayscale(1) contrast(1.25);
+    display: block;
+}
+
+.skillItem:hover .skillIcon {
+    filter: drop-shadow(0 0 6px var(--neon-violet));
+    transform: scale(1.15);
+}
+
+.skillName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+    .skillsBox {
+        padding: 1.25rem 1rem;
+        max-width: 100%;
+    }
+
+    .skillsList {
+        gap: 0.5rem 0.75rem;
+    }
+
+    .skillItem {
+        font-size: 0.78rem;
+        gap: 0.5rem;
+        padding: 0.25rem 0.35rem;
+    }
+
+    .skillIcon {
+        width: 1.15rem;
+        height: 1.15rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .skillsList {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Personal profile card */
+.profileCard {
+    position: relative;
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.75rem;
+    padding: 2rem;
+    background: linear-gradient(145deg, var(--color-bg-dark) 0%, var(--color-bg-mid) 100%);
+    color: #ffffff;
+    border: 4px solid var(--color-primary);
+    box-shadow: var(--shadow-neo-green);
+    transform: rotate(1deg);
+}
+
+.cardHeader,
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.cardHeader {
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--neon-violet);
+    color: #ffffff;
+}
+
+.cardHeader span:last-child,
+.cardFooter span:last-child {
+    color: var(--neon-violet);
+}
+
+.cardIdentity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.initials {
+    display: grid;
+    width: 5rem;
+    height: 5rem;
+    place-items: center;
+    flex-shrink: 0;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border: 3px solid var(--neon-violet);
+    box-shadow: 4px 4px 0 var(--color-bg-dark);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.cardEyebrow {
+    margin-bottom: 0.4rem;
+    color: var(--neon-violet);
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.cardRole {
+    font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+    line-height: 1.05;
+}
+
+.cardQuote {
+    max-width: 26rem;
+    border-left: 6px solid var(--neon-violet);
+    padding-left: 1rem;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.cardFacts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.cardFacts div {
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    padding-top: 0.6rem;
+}
+
+.cardFacts span,
+.cardFacts strong {
+    display: block;
+}
+
+.cardFacts span {
+    margin-bottom: 0.35rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.cardFacts strong {
+    font-size: 0.9rem;
+    line-height: 1.25;
+}
+
+.cardFooter {
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    padding-top: 0.75rem;
+    color: #ffffff;
+}
+
+@media (max-width: 640px) {
+    .profileCard {
+        transform: none;
+        padding: 1.5rem;
+    }
+
+    .cardFacts {
+        grid-template-columns: 1fr;
+    }
 }
