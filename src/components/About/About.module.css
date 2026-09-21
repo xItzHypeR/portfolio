@@ -199,3 +199,26 @@
     color: var(--neon-violet);
     margin-right: 0.75rem;
 }
+
+.boardProfile {
+    position: relative;
+    z-index: 1;
+}
+
+.boardName {
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 700;
+    letter-spacing: -0.07em;
+    line-height: 0.82;
+}
+
+.boardRole {
+    color: var(--neon-violet);
+    font-family: monospace;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+}

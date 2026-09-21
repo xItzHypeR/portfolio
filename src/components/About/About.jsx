@@ -64,20 +64,22 @@ export default function About() {
                     >
                         <div className={styles.boardGrid} />
                         <div className={styles.boardTopline}>
-                            <span>ABOUT / 001</span>
+                            <span>ABOUT ME / 001</span>
                             <span>GP</span>
                         </div>
-                        <p className={styles.boardStatement}>
-                            CODE <span>WITH</span> INTENTION.
-                        </p>
+                        <div className={styles.boardProfile}>
+                            <p className={styles.boardName}>GUSTAVO<br />PERALTA</p>
+                            <p className={styles.boardRole}>COMPUTER SYSTEMS<br />ENGINEERING STUDENT</p>
+                        </div>
                         <div className={styles.boardRule} />
                         <div className={styles.boardList}>
-                            <span>THINK IN SYSTEMS</span>
-                            <span>MAKE IT CLEAR</span>
+                            <span>BASED IN ESTELÍ, NICARAGUA</span>
+                            <span>REMOTE / ASYNC COLLABORATION</span>
+                            <span>SPANISH + WRITTEN ENGLISH</span>
                         </div>
                         <div className={styles.boardFooter}>
-                            <span>ESTELÍ, NICARAGUA</span>
-                            <span>FULL-STACK DEVELOPER</span>
+                            <span>WEB APPS · PRACTICAL TOOLS</span>
+                            <span>OPEN TO OPPORTUNITIES</span>
                         </div>
                     </motion.div>
                 </div>
