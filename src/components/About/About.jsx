@@ -60,15 +60,24 @@ export default function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className={styles.imageWrapper}
+                        className={styles.profileBoard}
                     >
-                        <div className={styles.rotatedBg} />
-                        <div className={styles.imageFrame}>
-                            <img
-                                src="/EsteliHub.webp"
-                                alt="Project preview from Gustavo's portfolio"
-                                className={styles.photo}
-                            />
+                        <div className={styles.boardGrid} />
+                        <div className={styles.boardTopline}>
+                            <span>ABOUT / 001</span>
+                            <span>GP</span>
+                        </div>
+                        <p className={styles.boardStatement}>
+                            CODE <span>WITH</span> INTENTION.
+                        </p>
+                        <div className={styles.boardRule} />
+                        <div className={styles.boardList}>
+                            <span>THINK IN SYSTEMS</span>
+                            <span>MAKE IT CLEAR</span>
+                        </div>
+                        <div className={styles.boardFooter}>
+                            <span>ESTELÍ, NICARAGUA</span>
+                            <span>FULL-STACK DEVELOPER</span>
                         </div>
                     </motion.div>
                 </div>
