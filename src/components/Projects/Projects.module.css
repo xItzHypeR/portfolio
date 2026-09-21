@@ -11,6 +11,13 @@
     padding-bottom: 1rem;
 }
 
+@media (max-width: 640px) {
+    .sectionHeader {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
 .sectionTitle {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
@@ -22,6 +29,13 @@
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: var(--neon-violet);
+}
+
+.sectionIntro {
+    max-width: 40rem;
+    margin-top: 0.75rem;
+    color: rgba(255, 255, 255, 0.58);
+    line-height: 1.6;
 }
 
 /* Grid */
@@ -106,6 +120,15 @@
     font-weight: 700;
     margin-bottom: 0.25rem;
 }
+
+.cardScope {
+    display: inline-block;
+    color: var(--neon-violet);
+    font-family: monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
 .cardTech {
     font-family: monospace;
     font-size: 0.8rem;
