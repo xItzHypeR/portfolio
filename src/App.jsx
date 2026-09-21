@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -9,8 +10,11 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import HireMe from './components/HireMe/HireMe';
 import ProjectDetail from './components/ProjectDetail/ProjectDetail';
+import { HOME_META, usePageMeta } from './lib/seo';
 
 function Home() {
+  usePageMeta(HOME_META);
+
   return (
     <>
       <Navbar />
@@ -30,6 +34,7 @@ function Home() {
 export default function App() {
   return (
     <Router>
+      <Analytics />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
