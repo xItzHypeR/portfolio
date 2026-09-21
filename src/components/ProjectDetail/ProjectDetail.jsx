@@ -4,6 +4,7 @@ import styles from './ProjectDetail.module.css';
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { getProjectMeta, usePageMeta } from '../../lib/seo';
+import NotFound from '../NotFound/NotFound';
 
 export default function ProjectDetail() {
     const { id } = useParams();
@@ -16,12 +17,7 @@ export default function ProjectDetail() {
     }, [id]);
 
     if (!project) {
-        return (
-            <div className={styles.container}>
-                <h2>Project not found</h2>
-                <Link to="/" className={styles.backBtn}>Back Home</Link>
-            </div>
-        );
+        return <NotFound />;
     }
 
     const nextProject = projects[(projects.indexOf(project) + 1) % projects.length];

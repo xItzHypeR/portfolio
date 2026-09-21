@@ -2,8 +2,32 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
+      "source": "/project/chatverde",
+      "destination": "/project/chatverde/index.html"
+    },
+    {
+      "source": "/project/allegra",
+      "destination": "/project/allegra/index.html"
+    },
+    {
+      "source": "/project/directory",
+      "destination": "/project/directory/index.html"
+    },
+    {
+      "source": "/project/productivity",
+      "destination": "/project/productivity/index.html"
+    },
+    {
+      "source": "/project/cashcrafter",
+      "destination": "/project/cashcrafter/index.html"
+    },
+    {
       "source": "/project/:id",
-      "destination": "/project/:id/index.html"
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
     }
   ]
 }

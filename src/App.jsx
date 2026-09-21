@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import HireMe from './components/HireMe/HireMe';
 import ProjectDetail from './components/ProjectDetail/ProjectDetail';
+import NotFound from './components/NotFound/NotFound';
 import { HOME_META, usePageMeta } from './lib/seo';
 
 function Home() {
@@ -38,6 +39,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
