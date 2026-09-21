@@ -1,5 +1,6 @@
 import styles from './About.module.css';
 import { motion } from 'motion/react';
+import ToolIcon from './ToolIcons';
 
 const skills = [
     'Java', 'C#', 'JavaScript (ES6+)', 'SQL',
@@ -20,20 +21,35 @@ export default function About() {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className={styles.headline}>
-                            PURE <br />CODE. <br />NO FLUFF.
+                            CODE. <br />CURIOSITY. <br />CRAFT.
                         </h2>
                         <p className={styles.body}>
-                            I don't just write code; I engineer solutions. My approach is
-                            rooted in mathematical precision and creative problem-solving. I
-                            believe in software that is fast, reliable, and accessible.
+                            I like understanding how things work and making them easier to use.
+                            My approach combines practical software development, a sense for
+                            visual detail, and the patience to keep improving an idea until it
+                            feels clear.
                         </p>
+                        <div className={styles.profileMeta}>
+                            <div>
+                                <span>BASED</span>
+                                <strong>Estelí, Nicaragua</strong>
+                            </div>
+                            <div>
+                                <span>COLLABORATION</span>
+                                <strong>Remote / async</strong>
+                            </div>
+                            <div>
+                                <span>LANGUAGES</span>
+                                <strong>Spanish + written English</strong>
+                            </div>
+                        </div>
                         <div className={styles.skillsBox}>
-                            <h3 className={styles.skillsTitle}>Technical Arsenal</h3>
+                                <h3 className={styles.skillsTitle}>Tools I Use</h3>
                             <ul className={styles.skillsList}>
                                 {skills.map((s) => (
                                     <li key={s} className={styles.skillItem}>
-                                        <span className={styles.dot} />
-                                        {s}
+                                        <ToolIcon name={s} className={styles.skillIcon} />
+                                        <span>{s}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -45,15 +61,43 @@ export default function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className={styles.imageWrapper}
+                        className={styles.profileCard}
                     >
-                        <div className={styles.rotatedBg} />
-                        <div className={styles.imageFrame}>
-                            <img
-                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop"
-                                alt="Minimalist laptop setup on a wooden desk"
-                                className={styles.photo}
-                            />
+                        <div className={styles.cardHeader}>
+                            <span>PROFILE CARD</span>
+                            <span>01 / 04</span>
+                        </div>
+                        <div className={styles.cardIdentity}>
+                            <div className={styles.initials}><img src="/gp-logo.svg" alt="GP" /></div>
+                            <div>
+                                <p className={styles.cardEyebrow}>GUSTAVO PERALTA</p>
+                                <h3 className={styles.cardRole}>COMPUTER SYSTEMS<br />ENGINEERING STUDENT</h3>
+                            </div>
+                        </div>
+                        <p className={styles.cardQuote}>
+                            I&apos;m building a career around clear communication, careful work, and steady iteration.
+                        </p>
+                        <div className={styles.cardFacts}>
+                            <div>
+                                <span>FOCUS</span>
+                                <strong>Web apps + practical tools</strong>
+                            </div>
+                            <div>
+                                <span>BASED IN</span>
+                                <strong>Estelí, Nicaragua</strong>
+                            </div>
+                            <div>
+                                <span>COLLABORATION</span>
+                                <strong>Remote / async</strong>
+                            </div>
+                            <div>
+                                <span>LANGUAGES</span>
+                                <strong>Spanish + written English</strong>
+                            </div>
+                        </div>
+                        <div className={styles.cardFooter}>
+                            <span>OPEN TO OPPORTUNITIES</span>
+                            <span>EST. 2026</span>
                         </div>
                     </motion.div>
                 </div>

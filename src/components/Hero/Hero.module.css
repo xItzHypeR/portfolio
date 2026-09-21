@@ -45,6 +45,7 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-bottom: 0.25rem;
+    font-size: 0.95rem;
 }
 
 .location {
@@ -63,7 +64,7 @@
 
 .outlineWord {
     color: var(--color-primary);
-    -webkit-text-stroke: 2px var(--color-primary);
+    -webkit-text-stroke: 0;
 }
 
 .descBox {
@@ -114,7 +115,7 @@
 
 .btnPrimary:hover {
     box-shadow: none;
-    color: var(--color-cyber-black);
+    color: var(--color-bg-dark);
     transform: translate(4px, 4px);
 }
 
@@ -130,6 +131,14 @@
     color: var(--color-bg-dark);
     box-shadow: none;
     transform: translate(4px, 4px);
+}
+
+.availability {
+    margin-top: 1.25rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
 }
 
 /* ---- Right: image card ---- */
