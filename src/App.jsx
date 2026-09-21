@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -33,6 +34,7 @@ function Home() {
 export default function App() {
   return (
     <Router>
+      <Analytics />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
