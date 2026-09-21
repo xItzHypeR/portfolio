@@ -3,11 +3,19 @@ import { projects } from '../../data/projects';
 import styles from './ProjectDetail.module.css';
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
+import { usePageMeta } from '../../lib/seo';
 
 export default function ProjectDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
     const project = projects.find(p => p.id === id);
+
+    usePageMeta({
+        title: project ? `${project.title} | Gustavo Peralta` : 'Project not found | Gustavo Peralta',
+        description: project?.fullDesc ?? 'Explore Gustavo Peralta\'s selected digital projects.',
+        image: project?.img ?? '/GustavoPeralta.webp',
+        path: `/project/${id}`,
+    });
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
