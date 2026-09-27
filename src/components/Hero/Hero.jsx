@@ -18,16 +18,17 @@ export default function Hero() {
           </div>
 
           <h1 className={styles.headline}>
-            BUILDING <br />
-            <span className={styles.outlineWord}>USEFUL</span> <br />
-            DIGITAL WORK.
+            WEBSITES. <br />
+            <span className={styles.outlineWord}>APPS.</span> <br />
+            USEFUL <br />
+            TOOLS.
           </h1>
 
           <div className={styles.descBox}>
             <p>
-              I&apos;m Gustavo, a full-stack developer who builds responsive websites
-              and practical software for people and small teams. I bring together
-              solid code, thoughtful interfaces, and a visual eye shaped by design.
+              I&apos;m Gustavo. I build responsive websites, web apps, and practical
+              software for businesses and small teams. Tell me what you need to
+              make easier; I&apos;ll help turn it into a clear, usable solution.
             </p>
           </div>
 

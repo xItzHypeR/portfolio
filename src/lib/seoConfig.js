@@ -7,8 +7,8 @@ const PERSON = {
 };
 
 export const HOME_META = {
-    title: 'Gustavo Peralta | Full-Stack Developer',
-    description: 'Portfolio of Gustavo Peralta, a full-stack developer from Nicaragua building useful digital tools and experiences.',
+    title: 'Gustavo Peralta | Websites & Custom Software',
+    description: 'Gustavo Peralta builds responsive websites, web applications, and practical software for businesses and small teams in Nicaragua and remotely.',
     image: '/GustavoPeralta.webp',
     path: '/',
     robots: 'index, follow',
@@ -20,7 +20,7 @@ export const HOME_META = {
             ...PERSON,
             image: `${SITE_URL}/GustavoPeralta.webp`,
             jobTitle: 'Full-Stack Developer',
-            description: 'Full-stack developer from Nicaragua building responsive websites, practical software, and useful digital tools.',
+            description: 'Full-stack developer from Nicaragua building websites, web applications, and practical software for businesses and small teams.',
             homeLocation: {
                 '@type': 'Place',
                 name: 'Estelí, Nicaragua',

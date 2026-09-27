@@ -16,7 +16,8 @@ export const projects = [
             team: '1 developer'
         },
         img: '/ChatVerde.webp',
-        imgAlt: 'Console conversational interface'
+        imgAlt: 'Console conversational interface',
+        sourceUrl: 'https://github.com/xItzHypeR/chatverde'
     },
     {
         id: 'allegra',
@@ -54,7 +55,8 @@ export const projects = [
             team: '1 developer'
         },
         img: '/EsteliHub.webp',
-        imgAlt: 'Abstract map interface'
+        imgAlt: 'Abstract map interface',
+        sourceUrl: 'https://github.com/xItzHypeR/EsteliHub'
     },
     {
         id: 'productivity',

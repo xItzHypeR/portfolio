@@ -88,13 +88,16 @@
 
 .btnPrimary,
 .btnSecondary {
-    flex: 1;
-    max-width: 200px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
     font-weight: 700;
     border: 2px solid #ffffff;
     transition: all 0.2s;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btnPrimary {
@@ -409,4 +412,44 @@
     text-decoration: underline;
     text-decoration-color: var(--color-primary);
     text-decoration-thickness: 3px;
+}
+
+.contactCta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 5rem;
+    padding: 2.5rem;
+    border: 3px solid var(--color-primary);
+    background: var(--color-bg-mid);
+    box-shadow: 7px 7px 0 #fff;
+}
+
+.contactCta h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.05;
+    margin-bottom: 0.75rem;
+}
+
+.contactCta p {
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+}
+
+.contactCta a {
+    flex-shrink: 0;
+    gap: 0.75rem;
+}
+
+@media (max-width: 700px) {
+    .headerCtas,
+    .contactCta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contactCta {
+        padding: 1.5rem;
+    }
 }

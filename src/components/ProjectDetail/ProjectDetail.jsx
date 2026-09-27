@@ -57,8 +57,17 @@ export default function ProjectDetail() {
                         </h1>
                     </div>
                     <div className={styles.headerCtas}>
-                        {/* <button className={styles.btnPrimary}>LIVE DEMO</button>
-                        <button className={styles.btnSecondary}>VIEW CODE</button> */}
+                        <a href="/#contact" className={styles.btnPrimary}>DISCUSS A SIMILAR PROJECT</a>
+                        {project.sourceUrl && (
+                            <a
+                                href={project.sourceUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.btnSecondary}
+                            >
+                                VIEW SOURCE CODE
+                            </a>
+                        )}
                     </div>
                     <p className={styles.shortDesc}>
                         {project.fullDesc}
@@ -172,6 +181,13 @@ export default function ProjectDetail() {
                         </Link>
                     </motion.aside>
                 </div>
+                <section className={styles.contactCta} aria-labelledby="project-contact-title">
+                    <div>
+                        <h2 id="project-contact-title">HAVE SOMETHING SIMILAR IN MIND?</h2>
+                        <p>Tell me what you need to build or improve. I work with businesses and teams in Nicaragua and remotely.</p>
+                    </div>
+                    <a href="/#contact" className={styles.btnPrimary}>LET&apos;S TALK <span aria-hidden="true">→</span></a>
+                </section>
             </main>
         </div>
     );

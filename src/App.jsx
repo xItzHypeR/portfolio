@@ -1,9 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Marquee from './components/Marquee/Marquee';
+import Services from './components/Services/Services';
 import Projects from './components/Projects/Projects';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
@@ -15,6 +17,15 @@ import { HOME_META, usePageMeta } from './lib/seo';
 
 function Home() {
   usePageMeta(HOME_META);
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView();
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [hash]);
 
   return (
     <>
@@ -22,6 +33,7 @@ function Home() {
       <main className="bg-grid-pattern" style={{ paddingTop: '80px' }}>
         <Hero />
         <Marquee />
+        <Services />
         <Projects />
         <About />
         <Contact />
